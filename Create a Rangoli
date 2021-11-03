@@ -1,0 +1,8 @@
+def gen(n):
+    for i in range(n * 2 - 1):
+        yield n - abs(i - n + 1)
+
+        
+n = int(input())
+for i in gen(n):
+    print('-'.join(chr(ord('a') + n - j) for j in gen(i)).center(n * 4 - 3, '-'))
